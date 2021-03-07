@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="F:/code/PageFactory">
+        <groups>
+            <run>
+
+            </run>
+        </groups>
+        <classes>
+            <class name="check">
+                <methods>
+                    <include name="VerifyCartContent" />
+                    <include name="checkNetbankingToCorpBank"></include>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
