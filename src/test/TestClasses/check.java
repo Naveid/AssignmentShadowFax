@@ -66,7 +66,7 @@ public class check extends testBase{
                 //helperMethod.waitforClickable(driver,orderPage.radiobypin);
                 Thread.sleep(2000);
                 helperMethod.moveOverElementclick(driver, orderPage.BtnDeliverHere);
-                helperMethod.ScrollPagetoBottom(driver);
+                //helperMethod.ScrollPagetoBottom(driver);
                 helperMethod.waitforClickable(driver,orderPage.btnChangeDeliverycontinue);
             }catch (AssertionError e){
                 logger.log(Status.FAIL,"Test Assertion Failed");
@@ -91,6 +91,7 @@ try{
         logger.log(Status.PASS, "Number of product equals 1");
         orderPage.btnContinueToPayment.click();
         helperMethod.waitforClickable(driver, orderPage.btnChangeOrdercontinue);
+
         helperMethod.ScrollPagetoBottom(driver);
         helperMethod.moveOverElementclick(driver, orderPage.RadioNetBankingbanking);
         helperMethod.SelectfromDropdown(driver, orderPage.SelectDropdown, prop.getProperty("bankToBill"));
@@ -114,7 +115,6 @@ try{
     @Test(dependsOnMethods = "VerifyCartContent")
     public void checkNetbankingToCorpBank() throws Exception {
         try {
-
                 Assert.assertTrue(driver.getCurrentUrl().contains("unionbankonline.co.in"));
                 logger.addScreenCaptureFromPath(helperMethod.takeScreenShot(driver, "bankScreenshot"));
                 logger.log(Status.PASS, "test Passed with screenshot taken of bank screen");
